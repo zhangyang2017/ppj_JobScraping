@@ -2,8 +2,7 @@
 ## Indeed.com
 
 
-![](https://github.com/zhangyang2017/ppj_JobScraping/blob/master/figures/wordCloud_DS.png)
-![](https://github.com/zhangyang2017/ppj_JobScraping/blob/master/figures/wordCloud_BioInfo.png)
+![](https://github.com/zhangyang2017/ppj_JobScraping/blob/master/figures/wordCloud_Indeed.png)
 
 #### References:
 - **indeed.com** scraper:
