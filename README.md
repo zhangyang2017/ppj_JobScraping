@@ -11,7 +11,7 @@
 - glassdoor.com scraper:
 
 - EDA & visualization:
-  - [Data Science Project from Scratch - Part4 (Exploratory Data Analysis](https://www.youtube.com/watch?v=QWgg4w1SpJ8&list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t&index=4) by Ken Jee
+  - [Data Science Project from Scratch - Part4 (Exploratory Data Analysis)](https://www.youtube.com/watch?v=QWgg4w1SpJ8&list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t&index=4) by Ken Jee
     - [corresponding github repo](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/data_eda.ipynb)
 
 ## Indeed.com
