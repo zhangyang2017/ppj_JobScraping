@@ -1,4 +1,6 @@
 # Repo for data science project: job posts scraping!
+## Indeed.com
+![job description](https://github.com/zhangyang2017/ppj_JobScraping/blob/master/figures/wordCloud_DS.png)
 
 #### References:
 - **indeed.com** scraper:
