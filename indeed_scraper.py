@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+## resources
+1. https://dev.to/hhsm95/using-user-agent-to-scraping-data-lli
+2. [How to Web Scrape Indeed with Python](https://www.youtube.com/watch?v=PPcgtx0sI2E) by John Watson Rooney
+3. [Comprehensive Python Beautiful Soup Web Scraping Tutorial!](https://www.youtube.com/watch?v=GjKQ6V_ViQE&t=2205s) by Keith Galli
+4. [How to scrape JOB posts from INDEED with PYTHON](https://www.youtube.com/watch?v=eN_3d4JrL_w&lc=Ugw9P4LYvEssGrIcNf94AaABAg.9FOng9tpc_Q9FOtU0NVkpR) by Izzy Analytics
+    - [corresponding github repo](https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-job-scraper.ipynb)
 """
 from datetime import datetime #to get the current date
 import requests
