@@ -33,8 +33,6 @@ from wordcloud import WordCloud, ImageColorGenerator, STOPWORDS
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-words = " ".join(jobs['summary'])
-
 def punctuation_stop(text):
     """remove punctuation and stop words"""
     filtered = []
@@ -45,16 +43,71 @@ def punctuation_stop(text):
             filtered.append(w.lower())
     return filtered
 
+words_DS = " ".join(jobs['summary'])
+words_filtered = punctuation_stop(words_DS)
+text_DS = " ".join([ele for ele in words_filtered])
+wc_DS= WordCloud(background_color="white", random_state=1,stopwords=STOPWORDS, max_words = 2000, width =800, height = 1500)
+wc_DS.generate(text_DS)
 
-words_filtered = punctuation_stop(words)
+words_bio = " ".join(bio['summary'])
+words_filtered = punctuation_stop(words_bio)
+text_bio = " ".join([ele for ele in words_filtered])
 
-text = " ".join([ele for ele in words_filtered])
+wc_bio= WordCloud(background_color="white", random_state=1,stopwords=STOPWORDS, max_words = 2000, width =800, height = 1500)
+wc_bio.generate(text_bio)
 
-wc= WordCloud(background_color="white", random_state=1,stopwords=STOPWORDS, max_words = 2000, width =800, height = 1500)
-wc.generate(text)
+
+f = plt.figure(figsize=(20,20))
+ax1 = f.add_subplot(1, 2, 1)
+f.suptitle("Most Wanted Skills", fontsize=22, fontweight='bold', color='chocolate')
+plt.imshow(wc_DS, interpolation="bilinear")
+ax1.set_title('Data Scientist from 1,269 Job Posts', fontsize=16, fontweight='bold')
+plt.axis('off')
+
+#####
+ax2 = f.add_subplot(1, 2, 2)
+plt.imshow(wc_bio, interpolation="bilinear")
+ax2.set_title('Bioinformatics from 1,286 Job Posts', fontsize=16, fontweight='bold')
+plt.axis('off')
+plt.subplots_adjust(hspace=0.2,wspace=0.2)
+f.subplots_adjust(top=1.2)
+plt.tight_layout()
+plt.show()
+
+
+
 
 plt.figure(figsize=[12,12])
-plt.imshow(wc, interpolation="bilinear")
+plt.imshow(wc_DS, interpolation="bilinear")
+plt.title('Most Wanted Skills for Data Scientist \n(2020-10-29 from Indeed.com)')
 plt.axis('off')
 plt.savefig('./figures/wordCloud_DS.png', bbox_inches = 'tight', dpi=300)
+plt.show()
+
+bio = pd.read_csv('./data/bioinformatics_jobs_indeed.csv')
+bio = bio.drop('Unnamed: 0', axis = 1)
+bio.drop_duplicates(keep=False,inplace=True)
+bio.shape
+
+bio['State'] = bio['location'].apply(lambda x: x.split(',')[1] if ',' in x else x)
+bio.drop(bio[bio.State == 'United States'].index, inplace=True)
+bio.drop(bio[bio.State == 'Remote'].index, inplace=True)
+
+bio['State'] = bio['State'].apply(lambda x: x.replace('California', 'CA').replace('Massachusetts', 'MA')
+                                  .replace('Florida', 'FL').replace('Wisconsin', 'WI')
+                                  .replace('Connecticut', 'CT').replace('New York State', 'NY')
+                                  .replace('Hawaii', 'HI').replace('Delaware', 'DE').replace('Illinois', 'IL'))
+bio['State'] = bio['State'].str.strip()
+
+bio['City'] = bio['location'].apply(lambda x: x.split(',')[0] if ',' in x else x)
+bio = bio.drop('location', axis = 1)
+
+
+
+
+plt.figure(figsize=[12,14])
+plt.imshow(wc, interpolation="bilinear")
+plt.title('Most Wanted Skills for Bioinformatician \n(1,286 Job Posts from Indeed.com 2020-10-29)')
+plt.axis('off')
+plt.savefig('./figures/wordCloud_BioInfo.png', bbox_inches = 'tight', dpi=300)
 plt.show()
