@@ -1,7 +1,7 @@
 # Repo for data science project: job posts scraping!
 
-#### Resources:
-- indeed.com scraper:
+#### References:
+- **indeed.com** scraper:
   - [How to Web Scrape Indeed with Python](https://www.youtube.com/watch?v=PPcgtx0sI2E) by John Watson Rooney
   - [How to scrape JOB posts from INDEED with PYTHON](https://www.youtube.com/watch?v=eN_3d4JrL_w&lc=Ugw9P4LYvEssGrIcNf94AaABAg.9FOng9tpc_Q9FOtU0NVkpR) by Izzy Analytics
     - [corresponding github repo](https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-job-scraper.ipynb)
