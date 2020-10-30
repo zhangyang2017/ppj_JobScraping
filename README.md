@@ -1,6 +1,6 @@
 # Repo for data science project: job posts scraping!
 #### References
-> First things first, :clap:shout out to these wonderful people who created these awesome contents!:clap:
+> First things first, :clap:shout out to these wonderful people who created these awesome contents :clap:! Everything I needed in this project I learned from links below.
 - General
     - [Comprehensive Python Beautiful Soup Web Scraping Tutorial!](https://www.youtube.com/watch?v=GjKQ6V_ViQE&t=2205s) by Keith Galli
     - [The importance of use User Agent to Scraping Data](https://dev.to/hhsm95/using-user-agent-to-scraping-data-lli) by Hugo Sandoval
