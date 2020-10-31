@@ -14,6 +14,8 @@
 - **glassdoor.com** scraper:
     - [Selenium Tutorial: Scraping Glassdoor.com in 10 Minutes](https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905) by Ömer Sakarya
         - [corresponding github repo](https://github.com/arapfaik/scraping-glassdoor-selenium/blob/master/glassdoor%20scraping.ipynb)
+    - [Data Science Project from Scratch - Part2 (Data Collection)](https://www.youtube.com/watch?v=GmW4F6MHqqs&list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t&index=2) by Ken Jee
+        - [corresponding github repo](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/glassdoor_scraper.py)
 
 - EDA & visualization:
   - [Data Science Project from Scratch - Part4 (Exploratory Data Analysis)](https://www.youtube.com/watch?v=QWgg4w1SpJ8&list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t&index=4) by Ken Jee
