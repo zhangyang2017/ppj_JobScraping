@@ -11,7 +11,9 @@
   - [How to Web Scrape Indeed with Python](https://www.youtube.com/watch?v=PPcgtx0sI2E) by John Watson Rooney
   - [How to scrape JOB posts from INDEED with PYTHON](https://www.youtube.com/watch?v=eN_3d4JrL_w&lc=Ugw9P4LYvEssGrIcNf94AaABAg.9FOng9tpc_Q9FOtU0NVkpR) by Izzy Analytics
     - [corresponding github repo](https://github.com/israel-dryer/Indeed-Job-Scraper/blob/master/indeed-job-scraper.ipynb)
-- glassdoor.com scraper:
+- **glassdoor.com** scraper:
+    - [Selenium Tutorial: Scraping Glassdoor.com in 10 Minutes](https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905) by Ömer Sakarya
+        - [corresponding github repo](https://github.com/arapfaik/scraping-glassdoor-selenium/blob/master/glassdoor%20scraping.ipynb)
 
 - EDA & visualization:
   - [Data Science Project from Scratch - Part4 (Exploratory Data Analysis)](https://www.youtube.com/watch?v=QWgg4w1SpJ8&list=PL2zq7klxX5ASFejJj80ob9ZAnBHdz5O1t&index=4) by Ken Jee
