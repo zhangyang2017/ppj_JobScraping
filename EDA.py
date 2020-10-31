@@ -27,9 +27,11 @@ jobs['City'] = jobs['location'].apply(lambda x: x.split(',')[0] if ',' in x else
 jobs = jobs.drop('location', axis = 1)
 
 jobs.to_csv('./data/data_scientist_jobs_indeed_cleaned.csv', index=False)
-jobs.State.value_counts()
+df = jobs.State.value_counts()
+df.to_csv('ds.csv')
 
-from wordcloud import WordCloud, ImageColorGenerator, STOPWORDS
+from wordcloud import WordCloud, STOPWORDS
+#ImageColorGenerator
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
@@ -57,21 +59,20 @@ wc_bio= WordCloud(background_color="white", random_state=1,stopwords=STOPWORDS, 
 wc_bio.generate(text_bio)
 
 
-f = plt.figure(figsize=(20,20))
+f = plt.figure(figsize=(22,20))
 ax1 = f.add_subplot(1, 2, 1)
-f.suptitle("Most Wanted Skills", fontsize=22, fontweight='bold', color='chocolate')
+f.suptitle("Most Wanted Skills as of 2020-10-29 Indeed.com", fontsize=22, fontweight='bold', color='chocolate')
 plt.imshow(wc_DS, interpolation="bilinear")
-ax1.set_title('Data Scientist from 1,269 Job Posts', fontsize=16, fontweight='bold')
+ax1.set_title('Data Scientist from 1,269 Job Posts', fontsize=16, fontweight='bold', color='darkmagenta')
 plt.axis('off')
-
 #####
 ax2 = f.add_subplot(1, 2, 2)
 plt.imshow(wc_bio, interpolation="bilinear")
-ax2.set_title('Bioinformatics from 1,286 Job Posts', fontsize=16, fontweight='bold')
+ax2.set_title('Bioinformatics from 1,286 Job Posts', fontsize=16, fontweight='bold', color='green')
 plt.axis('off')
-plt.subplots_adjust(hspace=0.2,wspace=0.2)
-f.subplots_adjust(top=1.2)
-plt.tight_layout()
+plt.subplots_adjust(wspace=0.05)
+f.subplots_adjust(top=0.97)
+plt.savefig('./figures/wordCloud_Indeed.png', bbox_inches = 'tight', dpi=300)
 plt.show()
 
 
