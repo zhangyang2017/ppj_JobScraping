@@ -1,3 +1,5 @@
 .DS_Store
 .ipynb_checkpoints/
 .~mapView__29343.twbr
+__pycache../
+__pycache__
