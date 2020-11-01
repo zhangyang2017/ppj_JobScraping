@@ -42,6 +42,22 @@ df['Company'] = df['Company'].apply(lambda x: x.split('\n')[0] if '\n' in x else
 ##create new feature: company age
 df['compHistory'] = df['Founded'].apply(lambda x: x if x < 1 else 2020-x)
 
+##clean up revenue
+df['Revenue'] = df['Revenue'].apply(lambda x: x.split('(')[0] if '(' in x else x)
+df['Revenue'] = df['Revenue'].apply(lambda x: x.split('/')[0] if '/' in x else x).str.strip()
+df['Revenue'] = df['Revenue'].apply(lambda x: x.replace('-1', 'Unknown'))
+
+##clean up ownership
+df['Ownership'] = df['Ownership'].apply(lambda x: x.replace('-1', 'Unknown'))
+
+df.to_csv('./data/glassdoor_halfcleaned_dataScientist.csv', index=False)
+##manually fill in some missing values if I can dig more information
+
+
 ##things to do
 ## split company size into groups
 ## fill in missing values
+## entry level or senior, job level
+## data analytics vs scientists, aka title simplifier
+##tools mentioned in job description, like python, and R, etc.
+##job description length
