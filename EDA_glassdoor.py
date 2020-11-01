@@ -9,6 +9,7 @@ Created on Sat Oct 31 17:03:01 2020
 import pandas as pd
 
 df = pd.read_csv('./data/glassdoor_raw_dataScientist.csv')
+df = df.drop('Headquarters', axis = 1) ##something seemed wrong during the scraping step; failed to grab this information.
 
 ##drop rows with no salary info
 df = df[df.SalaryEstimate != '-1']
@@ -25,3 +26,22 @@ df.drop(df[df.State == 'United States'].index, inplace=True)
 
 df['City'] = df['Location'].apply(lambda x: x.split(',')[0] if ',' in x else x)
 df = df.drop('Location', axis = 1)
+
+##drop internship job posts
+df.drop(df.loc[df['Title'].str.contains('Intern', regex=True)].index, inplace=True)
+
+##clean up salary estimate column
+df['Salary'] = df['SalaryEstimate'].apply(lambda x: x.split('(')[0] if '(' in x else x).apply(lambda x: x.replace('$', '')).apply(lambda x: x.replace('K', ''))
+df['minSalary'] = df['Salary'].apply(lambda x: x.split('-')[0] if '-' in x else x)
+df['maxSalary'] = df['Salary'].apply(lambda x: x.split('-')[1] if '-' in x else x)
+df = df.drop(['SalaryEstimate', 'Salary'], axis = 1)
+
+##clean up company column, remove numbers
+df['Company'] = df['Company'].apply(lambda x: x.split('\n')[0] if '\n' in x else x)
+
+##create new feature: company age
+df['compHistory'] = df['Founded'].apply(lambda x: x if x < 1 else 2020-x)
+
+##things to do
+## split company size into groups
+## fill in missing values
